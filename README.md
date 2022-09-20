@@ -1,2 +1,2 @@
-# kgsjs
+# kgs.js
 ramdon string message
