@@ -1,0 +1,32 @@
+{
+  "name": "kgsjs",
+  "version": "1.0.0",
+  "description": "ramdon string message",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javyer12/kgsjs.git"
+  },
+  "keywords": [
+    "javascript",
+    "npm",
+    "node",
+    "kgs"
+  ],
+  "author": "Francisco Murillo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javyer12/kgsjs/issues"
+  },
+  "homepage": "https://github.com/javyer12/kgsjs#readme",
+  "bin": {
+    "random-kgs": "./bin/global.js"
+  },
+  "preferGlobal": true,
+  "dependencies": {
+    "g": "^2.0.1"
+  }
+}
