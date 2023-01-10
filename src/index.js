@@ -15,6 +15,15 @@ const messages = [
       "This is not the commit message you are looking for",
       "Batman! (this commit has no parents)",
 ];
+const readline = require('readline').createInterface({
+      input: process.stdin,
+      output: process.stdout,
+});
+
+readline.question(`What's your name?`, name => {
+      console.log(`Hi ${name}!`);
+      readline.close();
+});
 const funnyCommit = () => {
       const message = messages[ Math.floor(Math.random() * messages.length) ];
       console.log(`\x1b[34m${message}\x1b[89m`);
