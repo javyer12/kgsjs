@@ -15,17 +15,45 @@ const messages = [
       "This is not the commit message you are looking for",
       "Batman! (this commit has no parents)",
 ];
-const readline = require('readline').createInterface({
-      input: process.stdin,
-      output: process.stdout,
-});
+const errorCommit = [
+      "It's still not working❌ ",
+      "Something is missing, i don't know what it is, but i'll fix it",
+      "Server not working",
+      "it's almost done",
+      "dependencies are deprecated💔"
+]
+const ERROR = 'kgs error'
+const SUCCESS = "kgs success"
+function Commit() {
+      const readline = require('readline').createInterface({
+            input: process.stdin,
+            output: process.stdout,
+      });
 
-readline.question(`What's your name?`, name => {
-      console.log(`Hi ${name}!`);
-      readline.close();
-});
-const funnyCommit = () => {
-      const message = messages[ Math.floor(Math.random() * messages.length) ];
-      console.log(`\x1b[34m${message}\x1b[89m`);
-};
-module.exports = { funnyCommit };
+      readline.question(`run the commit you wish:  `, name => {
+            const success = messages[ Math.floor(Math.random() * messages.length) ];
+            const error = messages[ Math.floor(Math.random() * messages.length) ];
+
+            if (name === SUCCESS) {
+                  console.log(success)
+            } else if (name === ERROR) {
+                  console.log(error)
+            } else {
+                  console.log("wrong command")
+            }
+
+            readline.close();
+      });
+}
+// const funnyCommit = (name) => {
+//       const message = messages[ Math.floor(Math.random() * messages.length) ];
+//       console.log(name);
+//       console.log(`\x1b[34m${message}\x1b[89m`);
+// };
+
+module.exports = { Commit };
+
+// comando para imprimr opciones
+// agregar mas items a las opciones
+// actualizar el readme
+// publicar
