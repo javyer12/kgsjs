@@ -8,22 +8,27 @@ const messages = [
       "👀Watchig👀",
       "💀Death💀",
       "🤪mocking🤪",
-      , "This commit is a lie",
       "I'll explain when you're older!",
       "Here be Dragons",
       "Reinventing the wheel. Again.",
-      "This is not the commit message you are looking for",
       "Batman! (this commit has no parents)",
+      "Readme completed"
 ];
 const errorCommit = [
+      "This is not the commit message you are looking for",
+      "This commit is a lie",
       "It's still not working❌ ",
       "Something is missing, i don't know what it is, but i'll fix it",
       "Server not working",
       "it's almost done",
-      "dependencies are deprecated💔"
+      "dependencies are deprecated💔",
+      "Uncompleted Readme "
 ]
 const ERROR = 'kgs error'
 const SUCCESS = "kgs success"
+const ERRORLIST = 'kgs -l error'
+const SUCCESSLIST = 'kgs -l success'
+
 function Commit() {
       const readline = require('readline').createInterface({
             input: process.stdin,
@@ -32,28 +37,39 @@ function Commit() {
 
       readline.question(`run the commit you wish:  `, name => {
             const success = messages[ Math.floor(Math.random() * messages.length) ];
-            const error = messages[ Math.floor(Math.random() * messages.length) ];
+            const error = errorCommit[ Math.floor(Math.random() * messages.length) ];
 
             if (name === SUCCESS) {
                   console.log(success)
             } else if (name === ERROR) {
                   console.log(error)
-            } else {
-                  console.log("wrong command")
+            } else if (name === ERRORLIST) {
+                  console.log("Error List Commit:")
+                  console.log(" ")
+                  errorCommit.map(item => {
+                        console.log(item);
+                  })
+            } else if (name === SUCCESSLIST) {
+                  console.log("Success List Commit: ")
+                  console.log(" ")
+                  messages.map(item => {
+                        console.log(item);
+                  })
+            }
+            else {
+                  console.log("Command incorrect")
             }
 
             readline.close();
       });
 }
-// const funnyCommit = (name) => {
-//       const message = messages[ Math.floor(Math.random() * messages.length) ];
-//       console.log(name);
+
 //       console.log(`\x1b[34m${message}\x1b[89m`);
-// };
 
 module.exports = { Commit };
 
-// comando para imprimr opciones
-// agregar mas items a las opciones
-// actualizar el readme
-// publicar
+
+// labo de javascript (practicar ejercicios js)
+// labo de node
+// contact backend con curso 
+// kgs fin

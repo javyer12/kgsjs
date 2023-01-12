@@ -13,7 +13,19 @@ npm install -g kgs
 # Usage
 
 ```bash
- random-kgs
+ Commands:
+
+    kgs -l error
+    # Print the errors list.
+
+    kgs -l sucess
+    # Print the successes list.
+
+    kgs error
+    #Run an errors list of commits to pick one
+
+    kgs success
+    # Run an successes list of commits to pick one
 ```
 
 # Contributing
